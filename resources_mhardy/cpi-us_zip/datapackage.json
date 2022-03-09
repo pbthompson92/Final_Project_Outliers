@@ -1,0 +1,225 @@
+{
+  "bytes": 124750,
+  "datahub": {
+    "created": "2017-11-09T00:53:52.248658",
+    "findability": "published",
+    "flowid": "core/cpi-us/8",
+    "modified": "2018-03-15T06:15:20.684629",
+    "owner": "core",
+    "ownerid": "core"
+  },
+  "hash": "5e5b1ff94874bd88fd20b8da7bade9c5",
+  "id": "core/cpi-us",
+  "keywords": [
+    "Indicator"
+  ],
+  "licenses": [
+    {
+      "id": "odc-pddl",
+      "name": "public_domain_dedication_and_license",
+      "url": "http://opendatacommons.org/licenses/pddl/1.0/",
+      "version": "1.0"
+    }
+  ],
+  "name": "cpi-us",
+  "resources": [
+    {
+      "bytes": 27030,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/9ce4f5347b2a908ddc1629ef3c87a7e7.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "mimetype": "text/csv",
+      "name": "cpiai_original",
+      "path": "archive/cpiai.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "Date (strictly the year and month)",
+            "format": "any",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Monthly Consumer Price Index. Values are U.S. city averages for all items and 1982-84=100.",
+            "name": "Index",
+            "type": "number"
+          },
+          {
+            "description": "Monthly Consumer Price Inflation. Values are for U.S. city averages for all items.",
+            "name": "Inflation",
+            "type": "number"
+          }
+        ]
+      },
+      "size": "15157",
+      "sources": [
+        {
+          "title": "unkown",
+          "web": "ftp://ftp.bls.gov/pub/special.requests/cpi/cpiai.txt"
+        }
+      ]
+    },
+    {
+      "bytes": 574,
+      "datahub": {
+        "type": "derived/report"
+      },
+      "description": "Validation report for tabular data",
+      "dpp:streamedFrom": "/tmp/tmpnideayfm/core/cpi-us/validation_report/data/b4ee696577a8d67ee981c2471f413740/validation_report.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "b4ee696577a8d67ee981c2471f413740",
+      "name": "validation_report",
+      "path": "data/validation_report.json",
+      "profile": "data-resource"
+    },
+    {
+      "bytes": 27030,
+      "datahub": {
+        "derivedFrom": [
+          "cpiai"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmpnideayfm/core/cpi-us/cpiai_csv/data/b17bfacbda3c08e51cd13fe544b8fca4/cpiai_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "b17bfacbda3c08e51cd13fe544b8fca4",
+      "mimetype": "text/csv",
+      "name": "cpiai_csv",
+      "path": "data/cpiai_csv.csv",
+      "profile": "data-resource",
+      "rowcount": 1213,
+      "schema": {
+        "fields": [
+          {
+            "description": "Date (strictly the year and month)",
+            "format": "%Y-%m-%d",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Monthly Consumer Price Index. Values are U.S. city averages for all items and 1982-84=100.",
+            "groupChar": "",
+            "name": "Index",
+            "type": "number"
+          },
+          {
+            "decimalChar": ".",
+            "description": "Monthly Consumer Price Inflation. Values are for U.S. city averages for all items.",
+            "groupChar": "",
+            "name": "Inflation",
+            "type": "number"
+          }
+        ]
+      },
+      "signed": true,
+      "size": "15157",
+      "sources": [
+        {
+          "title": "unkown",
+          "web": "ftp://ftp.bls.gov/pub/special.requests/cpi/cpiai.txt"
+        }
+      ]
+    },
+    {
+      "bytes": 69468,
+      "datahub": {
+        "derivedFrom": [
+          "cpiai"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmpnideayfm/core/cpi-us/cpiai_json/data/fc6f7ec0938256106d62a0ae8eb999e0/cpiai_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "fc6f7ec0938256106d62a0ae8eb999e0",
+      "mimetype": "text/csv",
+      "name": "cpiai_json",
+      "path": "data/cpiai_json.json",
+      "profile": "data-resource",
+      "rowcount": 1213,
+      "schema": {
+        "fields": [
+          {
+            "description": "Date (strictly the year and month)",
+            "format": "%Y-%m-%d",
+            "name": "Date",
+            "type": "date"
+          },
+          {
+            "description": "Monthly Consumer Price Index. Values are U.S. city averages for all items and 1982-84=100.",
+            "name": "Index",
+            "type": "number"
+          },
+          {
+            "description": "Monthly Consumer Price Inflation. Values are for U.S. city averages for all items.",
+            "name": "Inflation",
+            "type": "number"
+          }
+        ]
+      },
+      "signed": true,
+      "size": "15157",
+      "sources": [
+        {
+          "title": "unkown",
+          "web": "ftp://ftp.bls.gov/pub/special.requests/cpi/cpiai.txt"
+        }
+      ]
+    },
+    {
+      "bytes": 648,
+      "dpp:streamedFrom": "/tmp/tmp1a_p_x9y/README.md",
+      "format": "md",
+      "name": "readme",
+      "path": "README.md"
+    }
+  ],
+  "sources": [
+    {
+      "name": "US Bureau of Labor Statistics",
+      "title": "US Bureau of Labor Statistics",
+      "web": "http://www.bls.gov/cpi/"
+    }
+  ],
+  "title": "US Consumer Price Index and Inflation (CPI)",
+  "views": [
+    {
+      "name": "graph",
+      "spec": {
+        "group": "Date",
+        "series": [
+          "Inflation"
+        ],
+        "type": "column"
+      },
+      "specType": "simple",
+      "title": "Monthly Consumer Price Inflation"
+    },
+    {
+      "name": "graph",
+      "spec": {
+        "group": "Date",
+        "series": [
+          "Index"
+        ],
+        "type": "line"
+      },
+      "specType": "simple",
+      "title": "Monthly Consumer Price Index"
+    }
+  ]
+}
