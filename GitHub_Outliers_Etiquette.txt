@@ -1,0 +1,14 @@
+GitHub Outliers Team Etiquette
+
+	1. Start every working session with a pull of the main branch to ensure you are up to date with any changes
+	2. Include clear and concise comments when committing in case we need to reference back to an old commit 
+	3. Send a message to the group slack after a merge has been completed
+		a. Following a merge, each team member should complete a pull of the main branch 
+	4. Most conflicts during merging occur when two team members are working on the same file 
+		a. Be mindful and communicate to the group if there are two people working on the same file
+		b. Once you are done working for the day, merge your branch and send a message to the team chat so others can have access to the most up to date files 
+
+Other Articles for additional reading and support on GitHub: 
+
+* https://medium.com/anne-kerrs-blog/using-git-and-github-for-team-collaboration-e761e7c00281
+* https://opensource.com/article/20/7/git-best-practices#:~:text=6%20best%20practices%20for%20teams%20using%20Git%201,collaborate%20using%20Git%2C%20regardless%20of%20their%20expertise%20level.
