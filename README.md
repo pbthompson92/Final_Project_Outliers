@@ -9,7 +9,9 @@ In the last month we have a 40-year high in inflation rates. Our group is intere
 Can we predict housing prices across various regions in the United States using consumer price index, fuel rates, interest rates, unemployment rates, mortgage data, and other variables through a machine learning model? 
 
 ### Project Outline
-SCREEENSHOT PLACEHOLDER
+
+![image](https://user-images.githubusercontent.com/91712554/160052377-8fbe0ddc-3ca1-44f3-81ab-e82281392d9b.png)
+
 
 ### Description of Data Source 
  * [Unemployment Rates](https://data.oecd.org/unemp/unemployment-rate.htm) - Rates for the United States, filtered between 2011 to 2022. 
