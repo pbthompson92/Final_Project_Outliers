@@ -36,7 +36,7 @@ We followed the following steps to accomplish data pre-processing:
  * Splitting the dataset into training and testing set
  * Feature scaling: method used to normalize the range of independent variables or features of data. When the values vary a lot in an independent variable, we use feature scaling so that all the values remain in the comparable range. The variations in our dataset can be minimized simply by dividing the house prices by 1000.
 
- ### Feature Engineering and Feature Selection
+ #### Feature Engineering and Feature Selection
 
  Feature engineering is a process of extracting useful features from raw data using math, statistics and domain knowledge. For our project we started the process of feature engineering early on by detecting missing values and removing them from the dataset. Additionally during preprocessing, we added zipcodes as a feature to our dataset by matching each region ID against the respective zip codes
 
@@ -50,7 +50,7 @@ We followed the following steps to accomplish data pre-processing:
 
  #### Model of Choice
  Our problem statement involves predicting housing values. This problem can be solved by using a regression model. Multiple Linear Regression (MLR) is one of the important regression algorithms which models the linear relationship between a single dependent continuous variable and more than one independent variables. Multiple regressions are based on the assumption that there is a linear relationship between both the dependent and independent variables. It also assumes no major correlation between the independent variables.
- - Advantages and Disadvantages
+ * Advantages and Disadvantages
  
  There are two main advantages to analyzing data using a multiple regression model. The first is the ability to determine the relative influence of one or more predictor variables to the criterion value. The second advantage is the ability to identify outliers, or anomalies.
 
