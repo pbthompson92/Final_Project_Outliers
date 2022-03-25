@@ -35,8 +35,9 @@ We followed the following steps to accomplish data pre-processing:
  * Splitting the dataset into training and testing set
  * Feature scaling: method used to normalize the range of independent variables or features of data. When the values vary a lot in an independent variable, we use feature scaling so that all the values remain in the comparable range. The variations in our dataset can be minimized simply by dividing the house prices by 1000.
  In order to do a preliminary feature selection we checked the linear relationships that exists between the dependent and independent variable. Based on the output we determined there was not a linear relationship between housing prices and mortgage rates. Therefore, we dropped the mortgage rates from our dataset. 
+ 
+![Machine Learning Charts](https://user-images.githubusercontent.com/91712554/160052560-38988a82-ceac-410f-9708-05174fbd972a.png)
 
-SCREEN SHOT 
 
  * Python Scikitlearn's train_test_split function was used to split our data into training and testing sets for model performance evaluation. This is done by importing train_test_split from sklearn.model_selection. By default this function allots 25% of the dataset as the testing set.
 
