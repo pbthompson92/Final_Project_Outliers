@@ -1,7 +1,7 @@
-# Final Project Outliers
+# # Final Project Outliers
 
 ### Project Overview
-This project will use a supervised machine learning model to predict housing prices across various regions based on inflation rates.
+This project will use a supervised machine learning model to predict housing prices across different regions/zipcodes in the country based on some of the market and economic factors like inflation rates, unemployment rates, etc.
 
 In the last month we have a 40-year high in inflation rates. Our group is interested in understanding the impact these aggressive increases will have on housing prices across our various locations.
 
@@ -9,7 +9,9 @@ In the last month we have a 40-year high in inflation rates. Our group is intere
 Can we predict housing prices across various regions in the United States using consumer price index, fuel rates, interest rates, unemployment rates, mortgage data, and other variables through a machine learning model? 
 
 ### Project Outline
-SCREEENSHOT PLACEHOLDER
+
+![image](https://user-images.githubusercontent.com/91712554/160052377-8fbe0ddc-3ca1-44f3-81ab-e82281392d9b.png)
+
 
 ### Description of Data Source 
  * [Unemployment Rates](https://data.oecd.org/unemp/unemployment-rate.htm) - Rates for the United States, filtered between 2011 to 2022. 
@@ -17,6 +19,7 @@ SCREEENSHOT PLACEHOLDER
  * [Gas Prices](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=EMD_EPD2D_PTE_R50_DPG&f=W)
  * [Consumer Price Index Dataset](https://fred.stlouisfed.org/series/CPIAUCNS) - Contains information on the consumer price index between 1913 to 2022.
  * [Mortgage Data](https://www.fhfa.gov/DataTools/Downloads/Pages/National-Mortgage-Database-Aggregate-Data.aspx) - Monthly mortgage data in the United States on a monthly basis. 
+ * [Interest Rates](https://fred.stlouisfed.org/series/FEDFUNDS) - Interest Rates starting in 1955
 
 We will combine these datasets together to create one comprehensive view that can be used for the remainder of this analysis.
 
@@ -25,16 +28,43 @@ Our team started this project with only two data sources, [housing prices](https
 
 
 ### Machine Learning Model 
- * Description of preliminary data preprocessing
- * Description of preliminary feature engineering, feature selection (including decision making process)
- * Description of how data was split into training and testing sets 
- * Explanation of model choice, including limitations and benefits 
+#### Data Preprocessing
+We followed the following steps to accomplish data pre-processing:
+ * Import the libraries
+ * Import the dataset
+ * Check the missing values
+ * Splitting the dataset into training and testing set
+ * Feature scaling: method used to normalize the range of independent variables or features of data. When the values vary a lot in an independent variable, we use feature scaling so that all the values remain in the comparable range. The variations in our dataset can be minimized simply by dividing the house prices by 1000.
+
+ ### Feature Engineering and Feature Selection
+
+ Feature engineering is a process of extracting useful features from raw data using math, statistics and domain knowledge. For our project we started the process of feature engineering early on by detecting missing values and removing them from the dataset. Additionally during preprocessing, we added zipcodes as a feature to our dataset by matching each region ID against the respective zip codes
+
+ In order to do a preliminary feature selection we checked the linear relationships that exists between the dependent and independent variable. Based on the output we determined there was not a linear relationship between housing prices and mortgage rates. Therefore, we dropped the mortgage rates from our dataset. 
+ 
+![Machine Learning Charts](https://user-images.githubusercontent.com/91712554/160052560-38988a82-ceac-410f-9708-05174fbd972a.png)
+
+
+ #### Split the data into trainig and testing sets
+ Python Scikitlearn's train_test_split function was used to split our data into training and testing sets for model performance evaluation. This is done by importing train_test_split from sklearn.model_selection. By default this function allots 25% of the dataset as the testing set.
+
+ #### Model of Choice
+ Our problem statement involves predicting housing values. This problem can be solved by using a regression model. Multiple Linear Regression (MLR) is one of the important regression algorithms which models the linear relationship between a single dependent continuous variable and more than one independent variables. Multiple regressions are based on the assumption that there is a linear relationship between both the dependent and independent variables. It also assumes no major correlation between the independent variables.
+ - Advantages and Disadvantages
+ 
+ There are two main advantages to analyzing data using a multiple regression model. The first is the ability to determine the relative influence of one or more predictor variables to the criterion value. The second advantage is the ability to identify outliers, or anomalies.
+
+ Any disadvantage of using a multiple regression model usually comes down to the data being used. Two examples of this are using incomplete data and falsely concluding that a correlation is a causation.
 
 ### Database
- * ERD with Relationships 
+
+ * ERD SCREENSHOT PLACEHOLDER
 
 ### Dashboard 
 Tableau will be used to create an interactive dashboard to help visualize the relationship between housing prices and our variables.  Our dashboard will contain a filter that allows users to limit the data by date and region. The story board will include a United State map visual that indicates region housing prices through a heatmap or bubble size, a data table that lists the housing prices and associated variables across different regions and line charts that show trending of the variables over time. 
+
+### Presentation
+A PowerPoint Presentation summarizing our project can be found [here](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Final%20Presentation.pptx). 
 
 ### Communication Protocols 
 Below you can see a list of our team's communication protocols. 
