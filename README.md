@@ -52,7 +52,7 @@ We followed the following steps to accomplish data pre-processing:
 Tableau will be used to create an interactive dashboard to help visualize the relationship between housing prices and our variables.  Our dashboard will contain a filter that allows users to limit the data by date and region. The story board will include a United State map visual that indicates region housing prices through a heatmap or bubble size, a data table that lists the housing prices and associated variables across different regions and line charts that show trending of the variables over time. 
 
 ### Presentation
-A PowerPoint Presentation summarizing our project can be found here. [LINK PLACEHOLDER]
+A PowerPoint Presentation summarizing our project can be found [here](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Final%20Presentation.pptx). 
 
 ### Communication Protocols 
 Below you can see a list of our team's communication protocols. 
