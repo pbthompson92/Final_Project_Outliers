@@ -1,3 +1,5 @@
+--Testing line
+
 CREATE TABLE cpiaucns (
         "DATE" DATE NOT NULL,
         "CPIAUCNS" INT NOT NULL,
@@ -1100,5 +1102,6 @@ CREATE TABLE full_data_set (
         "49592" DECIMAL NOT NULL,
         "48710" DECIMAL NOT NULL,
         "12306" DECIMAL NOT NULL,
-        "33433" DECIMAL NOT NULL
+        "33433" DECIMAL NOT NULL,
+        PRIMARY KEY ("DATE")
 );
