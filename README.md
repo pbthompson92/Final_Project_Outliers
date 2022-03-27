@@ -27,7 +27,7 @@ We will combine these datasets together to create one comprehensive view that ca
 Our team started this project with only two data sources, [housing prices](https://www.kaggle.com/paultimothymooney/zillow-house-price-data?select=Sale_Prices_City.csv) and [consumer price index](https://fred.stlouisfed.org/series/CPIAUCNS). These data sources were cleaned by dropping null values, limiting the data range and dropping unnecessary columns. Following our initial analysis, it was determine that additional variables needed to be added in order for our machine learning model to be of real value. We then considered additional variables that could be added. Ultimately we added [gas prices](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=EMD_EPD2D_PTE_R50_DPG&f=W),  [unemployment rates](https://data.oecd.org/unemp/unemployment-rate.htm), and [data on mortgage payments](https://www.fhfa.gov/DataTools/Downloads/Pages/National-Mortgage-Database-Aggregate-Data.aspx). All of this data was filtered to be specific to the United States and limited to years between 2011 and 2022. We also determined the need to include zip code and latitude / longitude. This was a proactive approach to ensure we had all the information we need to create meaningful visualizations that would easily display discrepancies across the various regions within the United States. 
 
 
-### Machine Learning Model 
+### Machine Learning Model
 #### Data Preprocessing
 We followed the following steps to accomplish data pre-processing:
  * Import the libraries
