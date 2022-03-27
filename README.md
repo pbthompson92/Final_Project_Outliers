@@ -28,21 +28,33 @@ Our team started this project with only two data sources, [housing prices](https
 
 
 ### Machine Learning Model 
+#### Data Preprocessing
 We followed the following steps to accomplish data pre-processing:
  * Import the libraries
- * Import the Dataset
+ * Import the dataset
  * Check the missing values
  * Splitting the dataset into training and testing set
  * Feature scaling: method used to normalize the range of independent variables or features of data. When the values vary a lot in an independent variable, we use feature scaling so that all the values remain in the comparable range. The variations in our dataset can be minimized simply by dividing the house prices by 1000.
+
+  #### Feature Engineering and Feature Selection
+
+ Feature engineering is a process of extracting useful features from raw data using math, statistics and domain knowledge. For our project we started the process of feature engineering early on by detecting missing values and removing them from the dataset. Additionally during preprocessing, we added zip codes as a feature to our dataset by matching each region ID against the respective zip codes
+
  In order to do a preliminary feature selection we checked the linear relationships that exists between the dependent and independent variable. Based on the output we determined there was not a linear relationship between housing prices and mortgage rates. Therefore, we dropped the mortgage rates from our dataset. 
  
 ![Machine Learning Charts](https://user-images.githubusercontent.com/91712554/160052560-38988a82-ceac-410f-9708-05174fbd972a.png)
 
 
- * Python Scikitlearn's train_test_split function was used to split our data into training and testing sets for model performance evaluation. This is done by importing train_test_split from sklearn.model_selection. By default this function allots 25% of the dataset as the testing set.
+ #### Split the data into trainig and testing sets
+ Python Scikitlearn's train_test_split function was used to split our data into training and testing sets for model performance evaluation. This is done by importing train_test_split from sklearn.model_selection. By default this function allots 25% of the dataset as the testing set.
 
- * Our problem statement involves predicting housing values. This problem can be solved by using a regression model. Multiple Linear Regression (MLR) is one of the important regression algorithms which models the linear relationship between a single dependent continuous variable and more than one independent variables. Multiple regressions are based on the assumption that there is a linear relationship between both the dependent and independent variables. It also assumes no major correlation between the independent variables.
+ #### Model of Choice
+ Our problem statement involves predicting housing values. This problem can be solved by using a regression model. Multiple Linear Regression (MLR) is one of the important regression algorithms which models the linear relationship between a single dependent continuous variable and more than one independent variables. Multiple regressions are based on the assumption that there is a linear relationship between both the dependent and independent variables. It also assumes no major correlation between the independent variables.
  
+#### Advantages and Disadvantages 
+ There are two main advantages to analyzing data using a multiple regression model. The first is the ability to determine the relative influence of one or more predictor variables to the criterion value. The second advantage is the ability to identify outliers, or anomalies.
+
+ Any disadvantage of using a multiple regression model usually comes down to the data being used. Two examples of this are using incomplete data and falsely concluding that a correlation is a causation.### Database
 
 ### Database
 
