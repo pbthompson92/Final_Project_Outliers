@@ -58,7 +58,7 @@ We followed the following steps to accomplish data pre-processing:
 
 ### Database
 
- * ERD SCREENSHOT PLACEHOLDER
+![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/ERD.png)
 
 ### Dashboard 
 Tableau is being to create an interactive dashboard to help visualize the relationship between housing prices and our variables.  Our dashboard contains a filter that allows users to limit the data by date and region. The story board will include a United State map visual that indicates region housing prices through bubble size, a data table that lists the housing prices and associated variables across different regions and line charts that show trending of the variables over time. In addition it easily allows users to analyze housing prices across states and cities within the United States. 
