@@ -1,4 +1,4 @@
-# # Final Project Outliers
+# Final Project Outliers
 
 ### Project Overview
 This project will use a supervised machine learning model to predict housing prices across various regions based on inflation rates.
