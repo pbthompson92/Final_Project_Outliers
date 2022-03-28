@@ -1,5 +1,3 @@
---Testing line
-
 CREATE TABLE cpiaucns (
         "DATE" DATE NOT NULL,
         "CPIAUCNS" INT NOT NULL,
