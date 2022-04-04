@@ -67,14 +67,3 @@ The Tableau story can be found [here](https://public.tableau.com/app/profile/pau
 
 ### Presentation
 A PowerPoint Presentation summarizing our project can be found [here](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Final%20Presentation.pptx). 
-
-### Communication Protocols 
-Below you can see a list of our team's communication protocols. 
-
- * All meeting times we will be set assuming PST time zone
- * Primary communication method is group slack chat
- * Backup communication method is group text messages
- * All team members commit to meet from 7pm to 9pm on Tuesday and Thursday until the project is complete
- * The team will set up additional meetings as needed during the week and on the weekend as needed 
- * Every time someone merges a branch in GitHub a message will be sent to the group slack so everyone has visibility 
- * Refer to GitHub best practices document for additional guidance to ensure consistency on GitHub use
