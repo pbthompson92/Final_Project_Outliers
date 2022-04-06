@@ -15,6 +15,35 @@ In the last month we have a 40-year high in inflation rates. Our group is intere
 ### Project Question
 Can we predict housing prices across various regions in the United States using consumer price index, fuel rates, interest rates, unemployment rates, mortgage data, and other variables through a machine learning model? 
 
+### Index
+- [Data Sources](#description-of-data-source)
+    - [Data Exploration](#data-exploration)
+- [Technologies Used](#technologies-used)
+- [Data Transformation](#data-transformation)
+    - [Geocoding](#geocoding)
+    - [Incorporating Additional Datasets](#incorporating-additional-datasets)
+- [Machine Learning Model](#machine-learning-model)
+    - [Feature and Target Variables](#feature-and-target-variables)
+    - [Data Pre-Processing](#data-pre-processing)
+    - [Outlier Detection](#outlier-detection)
+- [Multiple Linear Regression](#1-machine-learning-model---multiple-linear-regression-mlr)
+    - [Feature Engineering and Feature Selection](#feature-engineering-and-feature-selection)
+    - [Modeling Process](#mlr---modeling-process)
+    - [Model Evaluation](#mlr---model-evaluation)
+    - [Model Evaluation Using Statsmodel](#mlr---model-evaluation-using-statsmodel)
+    - [Predictions](#mlr---predictions)
+    - [Graphical User Interface (GUI)](#mlr---graphical-user-interface-gui)
+    - [Advantages and Disadvantages](#mlr--advantages-and-disadvantages)
+- Random Foreset Regressor
+    - [Modeling Process](#rf---modeling-process)
+    - [Model Evaluation](#rf---model-evaluation)
+- [Neural Network](#3-machine-learning-model---neural-network-nn)
+- [Machine Learning Model Comparison/Model of Choice](#4-machine-learning-model-comparison-and-model-of-choice)
+- [Database](#database)
+- [Tableau Dashboard](#dashboard)
+<br/>
+- [Presentation](#presentation)
+
 ### Project Outline
 
 ![image](https://user-images.githubusercontent.com/91712554/160052377-8fbe0ddc-3ca1-44f3-81ab-e82281392d9b.png)
@@ -36,7 +65,7 @@ Our team started this project with only two data sources, [housing prices](https
 ## Technologies Used
 We used a variety of technologies, languages and libraries during the different stages of our project and you can see a comprehensive list of them here:<br/>
 #### Data Transformation 
-Python (pandas, uzaipcode, geopy, nominatim api, pathlib/path) Jupyter Notebook, csv file
+Python (pandas, USzipcode, geopy, Nominatim api, pathlib/path) Jupyter Notebook, csv file
 #### Database
 SQL, postgreSQL, pgAdmin, Microsoft Excel
 #### Machine Learning Model
@@ -45,9 +74,16 @@ Python (pandas, numpy, matplotlib, seaborn, sci-kit learn, tensorflow), Jupyter 
 Python GUI (tkinter), Tableau, vizQL
 
 
-## Data Transformation
+## Data Transformation<br/>
+Our first [dataset](https://www.kaggle.com/paultimothymooney/zillow-house-price-data?select=Sale_Prices_City.csv) contains chronological housing price data from 3,728 cities within the US, but there were many null values.  Our scope had to be limited to dates beginning in 2011 in order to have enough datapoints after rows with null values were purged from the dataset, ultimately netting 1,097 cities to work with.  The dataset used unique "region ID's" for an index, with monthly datestamps as column headers.  All of the other datasets that we wanted to incorporate used dates as their index, so we would need to transpose the housing price dataset after it had gone through our geocoding engine.
 
+### Geocoding
+Our dataset only included city and state names, without any additional geographic data that we would need in order to properly visualize our data on a map.  We chose to feed our list of locations through the USzipcode python search engine, in order to then feed the list of zip codes to our geocoding API (Nominatim).  We instructed our code to only one zip code in (most) cases where a city name returned more than one.  We also created a list of cities that the engine wasn't able to pair with a result, to make sure we weren't losing too many locations (we lost around another 100 locations during this process, but investigating them revealed that they were all very obscure and rural).<br/>
+Our slightly reduced dictionary of locations (paired with zip codes) was then fed through a Nominatim API call (accessed through the GeoPy Python library) to produce exact coordinates for each city in order to visualize the data in Tableau.  The API seemed to locate a slightly different number of locations each time it was ran, which is why we chose to do the remaining data incorporation with automated Python scripts (rather than with SQL joins, referenced [below](#database)).
 
+### Incorporating Additional Datasets
+After we had generated our finalized list of locations that were properly matched with zip codes and coordinates, we purged locations locations that were not in the list from our original dataset.  Our original data was transposed in order to use dates as our index, and we chose to use zip codes as our unique column headers to facilitate our [machine learning model's GUI](#mlr---graphical-user-interface-gui).  We then used a Python script to import and clean the inflation, gas price, interest rate, unemployment rate, and average mortgage rate datasets, converting them to a uniform date-time format in the process.  Through Python, we merged each dataset with our original, much like a series of SQL inner joins.<br/>
+After all datasets had been successfully merged into the file that we would be using for our machine learning model, we used a Pandas ".melt()" method to create a very long, skinny version of the dataset that would be more useful for integration with Tableau.
 
 ## Machine Learning Model
 To find an answer to our project question, we tested out three different machine learning algorithms to see which one works best: <br/>
@@ -85,7 +121,7 @@ However, it is to be noted that identifying and removing outliers is challenging
 ### 1. Machine Learning Model - Multiple Linear Regression (MLR)
 A linear regression model is an appropriate choice for making numerical predictions, especially when there is linear relation between the features. In our case, since we have multiple features in our dataset, a multiple linear regression model is applicable. The Multiple linear regression algorithm, models the linear relationship between a single dependent continuous variable and more than one independent variables.
 
-#### * Feature Engineering and Feature Selection
+#### Feature Engineering and Feature Selection
 
 Feature engineering is a process of extracting useful features from raw data using math, statistics and domain knowledge. For our project we started the process of feature engineering early on by detecting missing values and removing them from the dataset. Additionally during preprocessing, zip codes were added as a feature to our dataset by matching each region ID against the respective zip codes. This was performed during the data transformation process.
 
@@ -96,7 +132,7 @@ Feature selection was achieved by checking the linear relationships that exists 
  
 ![scatterplots.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/rmat112/Images/scatterplots.png)
 
-#### * MLR - Modeling Process
+#### MLR - Modeling Process
 ![MLRsteps.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/rmat112/Images/MLRsteps.png)
 
 - The model begins by us selecting the zip code that we are interested in for predicting housing prices. This pulls in the housing prices data for that particular zip code. 
@@ -106,7 +142,7 @@ Feature selection was achieved by checking the linear relationships that exists 
 - The model is trained 
 - Model is put to use by making predictions 
 
-#### * MLR - Model Evaluation
+#### MLR - Model Evaluation
 To evaluate model performance we calculate several parameters (For an example a model was evaluated for zip code 10001):<br/>
 - MAE is a very simple metric which calculates the absolute difference between actual and predicted values. (MAE = 10.42)
 - MSE represents the squared distance between actual and predicted values. we perform squared to avoid the cancellation of negative terms and it is the benefit of MSE. (MSE = 169.21)
@@ -116,13 +152,13 @@ To evaluate model performance we calculate several parameters (For an example a 
 The disadvantage of the R2 score is while adding new features in data the R2 score starts increasing or remains constant but it never decreases because It assumes that while adding more data, variance of data increases. But the problem is when we add an irrelevant feature in the dataset then at that time R2 sometimes starts increasing which is incorrect.
 - Adjusted R2: To control this situation discussed above adjusted R2 is calculated. (adj R2 = 0.86)<br/>
 
-#### * MLR - Model Evaluation using statsmodel
+#### MLR - Model Evaluation using statsmodel
 Statsmodels is a Python library built specifically for statistics. OLS from statsmodel was used in order to see all model statistics in one place, in a tabular format.<br/>
 (OLS) or Ordinary Least Squares regression  is a common technique for estimating coefficients of linear regression equations which describe the relationship between one or more independent quantitative variables and a dependent variable
 Notice below that the coefficients captured in this table match with the coefficients generated by sklearn in the previous section.
 ![OLStable.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/rmat112/Images/OLStable.png)
 
-#### * MLR - Predictions
+#### MLR - Predictions
 What would be the housing price in zip code 10001 (which is in NY btw) when average gas price hits $6.69, unemployment rate hits 13.5, interest rates are at 4.5, and the Consumer price index is at 356 points?
 Feature Variables:
 Gas Prices = $6.69
@@ -133,7 +169,7 @@ Model Prediction = $750,321
 
 ![MLRprediction.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/rmat112/Images/MLRprediction.png)
 
-#### * MLR - Graphical User Interface (GUI)
+#### MLR - Graphical User Interface (GUI)
 The predictions of this model can be visualized in a pop up window with a help of GUI. This GUI will allow users to input the desired economic factors in order to get predicted housing prices. This was done by using Tkinter, which is a standard GUI library for Python. Python when combined with Tkinter provides a fast and easy way to create GUI applications.
 Once we run the code, we will see this GUI, which includes the output generated by sklearn and the scatter diagrams for the selected Zip code. To bring to your attention that this is the same prediction we saw in the previous section.<br/>
 
@@ -141,7 +177,7 @@ Once we run the code, we will see this GUI, which includes the output generated 
 
 Please note: A live demo of this model prediction GUI is included in 'Dashboards and Visualization' section of our presentation. A link to the presentation is included later in this README file.
 
-#### * MLR- Advantages and Disadvantages 
+#### MLR- Advantages and Disadvantages 
 There are two main advantages to analyzing data using a multiple regression model. The first is the ability to determine the relative influence of one or more independent variables to the dependent variable. The second advantage is the ability to identify outliers, or anomalies.
 
 Any disadvantage of using a multiple regression model usually comes down to the data being used. Two examples of this are using incomplete data and falsely concluding that a correlation is a causation.
@@ -156,7 +192,7 @@ RandomForest Regressor model was used with a thousand estimators and the model w
 
 ![RFdataframe.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/rmat112/Images/RFdataframe.png)
 
-#### * RF - Model evaluation
+#### RF - Model evaluation
 This model was evaluated similar to the MLR model. Parameters like MAE, MSE, and RMSE were calculated.<br/>
 - MAE = 8.8
 - MSE = 110.79
@@ -184,7 +220,7 @@ Based on the above discussion our model of choice is Multiple Linear Regression 
 
 
 ## Database
-
+All of our original datasets were imported to a PostgreSQL server, visualized in the ERD below.  Our API call returned a slightly different number of locations each time it was ran, so ultimately we decided to merge the datasets with Python scripts rather than SQL.
 ![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/ERD.png)
 
 ## Dashboard 
