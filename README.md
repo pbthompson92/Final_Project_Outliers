@@ -17,7 +17,7 @@ Can we predict housing prices across various regions in the United States using 
 
 ### Project Outline
 
-![image](https://user-images.githubusercontent.com/91712554/160052377-8fbe0ddc-3ca1-44f3-81ab-e82281392d9b.png)
+![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/Project%20Flow.png)
 
 
 ## Description of Data Source 
