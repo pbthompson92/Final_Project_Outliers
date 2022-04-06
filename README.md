@@ -186,7 +186,7 @@ There are two main advantages to analyzing data using a multiple regression mode
 Any disadvantage of using a multiple regression model usually comes down to the data being used. Two examples of this are using incomplete data and falsely concluding that a correlation is a causation.
 
 ### 2. Machine Learning Model - Random Forest Regressor (RF)
-#### * RF - Modeling Process
+#### RF - Modeling Process
 Random forest is a type of supervised learning algorithm that uses ensemble methods (bagging) to solve both regression and classification problems. The algorithm operates by constructing a multitude of decision trees at training time and outputting the mean or mode of prediction of the individual trees.
 
 ![RFmodel.png](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/RFmodel.png)
