@@ -19,10 +19,10 @@ Can we predict housing prices across various regions in the United States using 
 - [Data Sources](#description-of-data-source)
     - [Data Exploration](#data-exploration)
 - [Technologies Used](#technologies-used)
-- [Data Transformation](#data-transformation)
+- [Data Transformation](#data-transformationbr)
     - [Geocoding](#geocoding)
     - [Incorporating Additional Datasets](#incorporating-additional-datasets)
-- [Machine Learning Model](#machine-learning-model)
+- [Machine Learning Model](#machine-learning-model-1)
     - [Feature and Target Variables](#feature-and-target-variables)
     - [Data Pre-Processing](#data-pre-processing)
     - [Outlier Detection](#outlier-detection)
@@ -39,11 +39,11 @@ Can we predict housing prices across various regions in the United States using 
     - [Model Evaluation](#rf---model-evaluation)
 - [Neural Network](#3-machine-learning-model---neural-network-nn)
 - [Machine Learning Model Comparison/Model of Choice](#4-machine-learning-model-comparison-and-model-of-choice)
-- [Database](#database)
-- [Tableau Dashboard](#dashboard)
-<br/>
+- [Database](#database-1)
+- [Tableau Dashboard](#dashboard-1)
+---
 - [Presentation](#presentation)
-
+---
 ### Project Outline
 
 ![image](https://user-images.githubusercontent.com/91712554/160052377-8fbe0ddc-3ca1-44f3-81ab-e82281392d9b.png)
@@ -83,6 +83,7 @@ Our slightly reduced dictionary of locations (paired with zip codes) was then fe
 
 ### Incorporating Additional Datasets
 After we had generated our finalized list of locations that were properly matched with zip codes and coordinates, we purged locations locations that were not in the list from our original dataset.  Our original data was transposed in order to use dates as our index, and we chose to use zip codes as our unique column headers to facilitate our [machine learning model's GUI](#mlr---graphical-user-interface-gui).  We then used a Python script to import and clean the inflation, gas price, interest rate, unemployment rate, and average mortgage rate datasets, converting them to a uniform date-time format in the process.  Through Python, we merged each dataset with our original, much like a series of SQL inner joins.<br/>
+<br/>
 After all datasets had been successfully merged into the file that we would be using for our machine learning model, we used a Pandas ".melt()" method to create a very long, skinny version of the dataset that would be more useful for integration with Tableau.
 
 ## Machine Learning Model
