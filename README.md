@@ -188,9 +188,15 @@ Based on the above discussion our model of choice is Multiple Linear Regression 
 ![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/ERD.png)
 
 ## Dashboard 
-Tableau is being to create an interactive dashboard to help visualize the relationship between housing prices and our variables.  Our dashboard contains a filter that allows users to limit the data by date and region. The story board will include a United State map visual that indicates region housing prices through bubble size, a data table that lists the housing prices and associated variables across different regions and line charts that show trending of the variables over time. In addition it easily allows users to analyze housing prices across states and cities within the United States. 
+Tableau is being to create an interactive dashboard to help visualize the relationship between housing prices and our variables.  Our dashboard contains a filter that allows users to limit the data by date and region. The story board includes a United States map visual that indicates region housing prices through bubble size, a data table that lists the housing prices and associated variables across different regions and line charts that show trending of the variables over time. In addition it easily allows users to analyze housing prices across states and cities within the United States. 
 
-The Tableau story can be found [here](https://public.tableau.com/app/profile/paula.thompson/viz/OutlierProject/Story1?publish=yes).
+![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/Dashboard%201.png)
+
+![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/Dashboard%202.png)
+
+![image](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Images/Dashboard%203.png)
+
+The full Tableau story can be found [here](https://public.tableau.com/app/profile/paula.thompson/viz/OutlierProject/Story1?publish=yes).
 
 ## Presentation
 A PowerPoint Presentation summarizing our project can be found [here](https://github.com/pbthompson92/Final_Project_Outliers/blob/main/Final%20Presentation.pptx). 
