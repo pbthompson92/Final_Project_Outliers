@@ -34,7 +34,7 @@ Can we predict housing prices across various regions in the United States using 
     - [Predictions](#mlr---predictions)
     - [Graphical User Interface (GUI)](#mlr---graphical-user-interface-gui)
     - [Advantages and Disadvantages](#mlr--advantages-and-disadvantages)
-- Random Foreset Regressor
+- [Random Foreset Regressor](#2-machine-learning-model---random-forest-regressor-rf)
     - [Modeling Process](#rf---modeling-process)
     - [Model Evaluation](#rf---model-evaluation)
 - [Neural Network](#3-machine-learning-model---neural-network-nn)
