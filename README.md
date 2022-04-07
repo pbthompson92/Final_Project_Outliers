@@ -208,8 +208,11 @@ Since values indicate better fit, Random Forest Regressor appears to be a better
 In addition to the models discussed above, a neural network model was also tested for our problem. Neural networks work better at predictive analytics because of the hidden layers. Linear regression models use only input and output nodes to make predictions. The neural network also uses the hidden layer to make predictions more accurate. That’s because it ‘learns’ the way a human does.
 
 However, they require massive amounts of computing power, so they are cost-prohibitive. In addition, neural networks work best when trained with extremely large data sets.<br/>
-Our NN model used one hidden layer with 10 nodes and Relu activation function. The output layer used linear activation function. The model was trained with 1,000 epochs.<br/>
+Our NN model used one hidden layer with 10 nodes and Relu activation function. The output layer used linear activation function with one node which will be prediced one real-value. The model was trained with 1,000 epochs.<br/>
 We calculated loss function and MSE to evaluate the model performance. The results showed very high losses. The running time was also high for this model. Since we already know that our dataset is not very large, and due to other issues discussed before, we decided not to pursue further revisions of this model.
+
+<img width="723" alt="NN_model" src="https://user-images.githubusercontent.com/92502292/162108370-c8d2efbe-dcb7-41b5-bd0b-1530564234f8.PNG">
+
 
 ### 4. Machine Learning Model Comparison and Model of Choice
 As discussed in sections above, here are some important inferences:
