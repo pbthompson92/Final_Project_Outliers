@@ -19,7 +19,7 @@ Can we predict housing prices across various regions in the United States using 
 - [Data Sources](#description-of-data-source)
     - [Data Exploration](#data-exploration)
 - [Technologies Used](#technologies-used)
-- [Data Transformation](#data-transformationbr)
+- [Data Transformation](#data-transformation-1)
     - [Geocoding](#geocoding)
     - [Incorporating Additional Datasets](#incorporating-additional-datasets)
 - [Machine Learning Model](#machine-learning-model-1)
@@ -74,7 +74,7 @@ Python (pandas, numpy, matplotlib, seaborn, sci-kit learn, tensorflow), Jupyter 
 Python GUI (tkinter), Tableau, vizQL
 
 
-## Data Transformation<br/>
+## Data Transformation
 Our first [dataset](https://www.kaggle.com/paultimothymooney/zillow-house-price-data?select=Sale_Prices_City.csv) contains chronological housing price data from 3,728 cities within the US, but there were many null values.  Our scope had to be limited to dates beginning in 2011 in order to have enough datapoints after rows with null values were purged from the dataset, ultimately netting 1,097 cities to work with.  The dataset used unique "region ID's" for an index, with monthly datestamps as column headers.  All of the other datasets that we wanted to incorporate used dates as their index, so we would need to transpose the housing price dataset after it had gone through our geocoding engine.
 
 ### Geocoding
@@ -204,12 +204,16 @@ Since values indicate better fit, Random Forest Regressor appears to be a better
 
 
 
-### 3. Machine Learning Model -  Neural Network (NN)
+### 3. Machine Learning Model - Neural Network (NN)
 In addition to the models discussed above, a neural network model was also tested for our problem. Neural networks work better at predictive analytics because of the hidden layers. Linear regression models use only input and output nodes to make predictions. The neural network also uses the hidden layer to make predictions more accurate. That’s because it ‘learns’ the way a human does.
 
 However, they require massive amounts of computing power, so they are cost-prohibitive. In addition, neural networks work best when trained with extremely large data sets.<br/>
-Our NN model used one hidden layer with 10 nodes and Relu activation function. The output layer used linear activation function. The model was trained with 1,000 epochs.<br/>
+Our NN model used one hidden layer with 10 nodes and Relu activation function. The output layer used linear activation function with one node which will be prediced one real-value. The model was trained with 1,000 epochs.<br/>
+
 We calculated loss function and MSE to evaluate the model performance. The results showed very high losses. The running time was also high for this model. Since we already know that our dataset is not very large, and due to other issues discussed before, we decided not to pursue further revisions of this model.
+
+<img width="723" alt="NN_model" src="https://user-images.githubusercontent.com/92502292/162108370-c8d2efbe-dcb7-41b5-bd0b-1530564234f8.PNG">
+
 
 ### 4. Machine Learning Model Comparison and Model of Choice
 As discussed in sections above, here are some important inferences:
