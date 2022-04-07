@@ -204,7 +204,7 @@ Since values indicate better fit, Random Forest Regressor appears to be a better
 
 
 
-### 3. Machine Learning Model -  Neural Network (NN)
+### 3. Machine Learning Model - Neural Network (NN)
 In addition to the models discussed above, a neural network model was also tested for our problem. Neural networks work better at predictive analytics because of the hidden layers. Linear regression models use only input and output nodes to make predictions. The neural network also uses the hidden layer to make predictions more accurate. That’s because it ‘learns’ the way a human does.
 
 However, they require massive amounts of computing power, so they are cost-prohibitive. In addition, neural networks work best when trained with extremely large data sets.<br/>
